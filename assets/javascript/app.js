@@ -1,10 +1,10 @@
-var characters = ["Jon Snow", "Daenerys Targaryen", "Melisandre", "Joffrey Baratheon", "Theon Greyjoy", "Ramsay Bolton", "Bronn", "Eddard Stark", "Grey Worm", "Ygritte", "Euron Greyjoy", "Meera Reed", "Tommen Baratheon", "Walder Frey"];
+var characters = ["Melisandre", "Joffrey Baratheon", "Theon Greyjoy", "Ramsay Bolton", "Bronn", "Eddard Stark", "Grey Worm", "Ygritte", "Euron Greyjoy", "Meera Reed", "Tommen Baratheon", "Walder Frey"];
 
 function displayCharacter(){
 
-    var character = $(this).attr("data-name");
+    var characters = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-    character + "&api_key=QdtD9l4M8HGIcDstv74lLtDcjcpk6nq1&limit=10";
+    characters + "&api_key=QdtD9l4M8HGIcDstv74lLtDcjcpk6nq1&limit=10";
     
     $.ajax({
         url: queryURL,
@@ -62,7 +62,7 @@ function renderButtons(){
     $("#add-character").on("click", function(event){
     event.preventDefault();
 
-    var character = $("#character-input").val().tirm();
+    var character = $("#character-input").val().trim();
 
     characters.push(character);
 
@@ -70,6 +70,6 @@ function renderButtons(){
     renderButtons();
     });
 
-$(document).on("click", ".character-btn", displayCharacter);
+$(document).on("click", "#character-btn", displayCharacter);
 
 renderButtons();
