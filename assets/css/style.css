@@ -1,3 +1,5 @@
-h1{
+h1, label{
     color: orangered;
+    font-style: bold;
+    background-color: wheat;
 }
